@@ -40,7 +40,7 @@ function GroceryAddBar({setGroceryList, sortList}) {
                 <option>4</option>
                 <option>5</option>
             </select>
-            <select class="form-control" id="status" value={product.priority} onChange={e=>{handleChange({status: e.target.value})}}>
+            <select class="form-control" id="status" value={product.status} onChange={e=>{handleChange({status: e.target.value})}}>
                 <option>Run Out</option>
                 <option>Have</option>
             </select>
