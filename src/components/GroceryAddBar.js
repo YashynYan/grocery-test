@@ -31,23 +31,24 @@ function GroceryAddBar({setGroceryList, sortList}) {
 
     console.log(product)
     return (
-        <div style={{width: "30%", marginBottom:"3em"}}>
-            <input class="form-control" type="text" placeholder="Product Name" value={product.name} onChange={(e)=>{handleChange({name: e.target.value})}}></input>
-            <select class="form-control" id="priority" value={product.priority} onChange={e=>{handleChange({priority: parseInt(e.target.value)})}}>
-                <option value="1">1</option>
-                <option>2</option>
-                <option>3</option>
-                <option>4</option>
-                <option>5</option>
-            </select>
-            <select class="form-control" id="status" value={product.status} onChange={e=>{handleChange({status: e.target.value})}}>
-                <option>Run Out</option>
-                <option>Have</option>
-            </select>
-            <Button variant="primary" onClick={onClick}>
-                Add Product
-            </Button>
-            
+        <div className="d-flex flex-column align-items-center">
+            <div className="w-50">
+                <input class="form-control" type="text" placeholder="Product Name" value={product.name} onChange={(e)=>{handleChange({name: e.target.value})}}></input>
+                <select class="form-control" id="priority" value={product.priority} onChange={e=>{handleChange({priority: parseInt(e.target.value)})}}>
+                    <option value="1">1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                </select>
+                <select class="form-control" id="status" value={product.status} onChange={e=>{handleChange({status: e.target.value})}}>
+                    <option>Run Out</option>
+                    <option>Have</option>
+                </select>
+                <Button variant="primary" onClick={onClick}>
+                    Add Product
+                </Button>
+            </div>
         </div>
     )
 }
