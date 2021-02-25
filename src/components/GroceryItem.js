@@ -26,7 +26,7 @@ function GroceryItem({item, index, onDelete, onEdit}) {
                 editStatus?
                 <td>
                     <div style={{display: "flex", flexDirection:"row", justifyContent:"space-between" }}>
-                    <select class="form-control" id="status" value={status} onChange={e => setStatus(e.target.value)}>
+                    <select className="form-control" id="status" value={status} onChange={e => setStatus(e.target.value)}>
                         <option>Run Out</option>
                         <option>Have</option>
                     </select>

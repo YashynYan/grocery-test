@@ -7,7 +7,7 @@ function GroceryList() {
 
     const sortList = (list) => {
 
-        const sortedList = list===null? list: list.sort((a,b) => {
+        const sortedList = list===null? []: list.sort((a,b) => {
             const nameA = a.name.toUpperCase()
             const nameB = b.name.toUpperCase()
             const priorityA = a.priority

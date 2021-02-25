@@ -28,9 +28,7 @@ function GroceryTable({groceryList, setGroceryList}) {
     }
 
     const onEdit = (editedItem, editedIndex) => {
-        console.log(editedItem, editedIndex)
         const newGroceryList = groceryList.map((item, index)=>{
-            console.log(index===editedIndex && item.status!==editedItem.status)
             if(index===editedIndex && item.status!==editedItem.status){
                 editedItem.lastChanges=new Date().toLocaleDateString() + " " + new Date().toLocaleTimeString()
                 return editedItem
@@ -43,7 +41,7 @@ function GroceryTable({groceryList, setGroceryList}) {
 
         return (
             <div>
-                <select class="form-control" id="priority" style={{width: "15%"}} value={sortBy} onChange={e => {setSortBy(e.target.value)}}>
+                <select className="form-control" id="priority" style={{width: "15%"}} value={sortBy} onChange={e => {setSortBy(e.target.value)}}>
                     <option>Show All</option>
                     <option>Run Out</option>
                     <option>Have</option>
@@ -63,7 +61,7 @@ function GroceryTable({groceryList, setGroceryList}) {
                         filteredList===null?
                         null:
                         filteredList.map((item, index) => {
-                            return <GroceryItem item={item} index={index} onDelete={onDelete} onEdit={onEdit}/>
+                            return <GroceryItem key={index} item={item} index={index} onDelete={onDelete} onEdit={onEdit}/>
                         })}
                         
             
